@@ -7,7 +7,7 @@ from math import cos, pi
 from ctypes import windll
 
 # Constants
-LONGITUDE_CITY = 2.349014
+LONGITUDE_CITY = 1.349014
 NASA_URL = 'https://epic.gsfc.nasa.gov/api/natural'
 HOME = str(pathlib.Path.home())
 FOLDERNAME_CITY = 'Earth_pics'
@@ -26,7 +26,7 @@ best_i_city = min(Images_medadata, key=lambda Image_medadata: 1 - cos((Image_med
 pic_city = f'https://epic.gsfc.nasa.gov/archive/natural/{best_i_city["date"][:4]}/{best_i_city["date"][5:7]}/{best_i_city["date"][8:10]}/png/{best_i_city["image"]}.png'
 
 # Create folder if it doesn't exist
-folder_path = pathlib.Path(HOME) / FOLDERNAME_CITY
+folder_path = pathlib.Path(HOME) / "Pictures" / FOLDERNAME_CITY
 folder_path.mkdir(parents=True, exist_ok=True)
 
 # Download the image to the folder
